@@ -1,0 +1,22 @@
+<form (ngSubmit)="generatePassword()">
+    <div class="container">
+      <h1>Password Generator</h1>
+      <input type="text" [(ngModel)]="password" name="password" readonly>
+      
+      <div class="range-group">
+        <label for="length">Password Length: {{ passwordLength }}</label>
+        <input type="range" id="length" min="4" max="20" [(ngModel)]="passwordLength" name="passwordLength">
+      </div>
+  
+      <div class="checkbox-group">
+        <label><input type="checkbox" [(ngModel)]="hasUpperCase" name="hasUpperCase"> Has upper case</label><br>
+        <label><input type="checkbox" [(ngModel)]="hasLowerCase" name="hasLowerCase"> Has lower case</label><br>
+        <label><input type="checkbox" [(ngModel)]="hasNumbers" name="hasNumbers"> Has numbers</label><br>
+        <label><input type="checkbox" [(ngModel)]="hasSpecialChars" name="hasSpecialChars"> Has special characters</label>
+      </div>
+  
+      <button type="submit">Generate Password</button>
+      <div id="strength">Password Strength: {{ strength }}</div>
+    </div>
+  </form>
+  
